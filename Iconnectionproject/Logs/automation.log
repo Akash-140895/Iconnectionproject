@@ -1,0 +1,6 @@
+14:50:29.197 [main] INFO  factory.BaseClass - user is in iconnection login page
+14:50:29.675 [main] INFO  factory.BaseClass - user entered the data into the respected field
+14:50:50.518 [main] INFO  factory.BaseClass - user entered OTP in respected filed
+14:50:51.034 [main] INFO  factory.BaseClass - user is clicked on continue button
+14:51:05.075 [main] INFO  factory.BaseClass - user is re-directed succesfully to Investorportal table page
+14:51:24.841 [main] INFO  factory.BaseClass - user is logged out succesfully
