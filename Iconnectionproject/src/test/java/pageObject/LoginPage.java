@@ -20,8 +20,8 @@ public class LoginPage extends BasePage {
 	WebElement verify_logo;
 
 	// Action methods
-	public void Enter_username(String USR) {
-		User_text.sendKeys(USR);
+	public void Enter_username(String USN) {
+		User_text.sendKeys(USN);
 	}
 	public void Enter_password(String PWD) {
 		User_psw.sendKeys(PWD);

@@ -17,12 +17,28 @@ public class CreateInvestorSteps extends BaseClass {
 	LoginPage Lp;
 	LogoutPage LGP;
 
-	@Given("User is in Investors table page")
-	public void user_is_in_investors_table_page() {
-
+	@Given("User needs to navigate to Investors table page")
+	public void user_needs_to_navigate_investors_table_page() 
+	{
+		BaseClass.getLogger().info("user is in iconnection login page");
+		Lp=new LoginPage(BaseClass.getDriver());
+		
+	}
+	@Given("user needs to enter the inputs\\(User: {string}, Pass: {string})")
+	public void user_needs_to_enter_the_inputs(String User,String Pass) throws InterruptedException {
+		BaseClass.getLogger().info("user entered the data into the respected field");
+		Lp.Enter_username(User);
+		Lp.Enter_password(Pass);
+		Lp.Enter_continue();
+		BaseClass.getLogger().info("user entered OTP in respected field");
+		Thread.sleep(20000);
+		BaseClass.getLogger().info("user is clicked on continue button");
+		Lp.Enter_continue();
+		Thread.sleep(10000);
+		BaseClass.getLogger().info("user is re-directed succesfully to Investorportal table page");
 	}
 
-	@Given("user needs to click on Add investor button")
+	@When("user needs to click on Add investor button")
 	public void user_needs_to_click_on_add_investor_button() {
 		ITP = new InvestorTablePage(BaseClass.getDriver());
 		ITP.Click_AddInvestor();
@@ -35,7 +51,8 @@ public class CreateInvestorSteps extends BaseClass {
 	}
 
 	@When("user needs to input all the data to respected fields")
-	public void user_needs_to_input_all_the_data_to_respected_fields() {
+	public void user_needs_to_input_all_the_data_to_respected_fields() 
+	{
 		IKF = new InvestorKYCForm(BaseClass.getDriver());
 		IKF.InvestorType();
 		IKF.SelectInvestorType();
@@ -58,22 +75,37 @@ public class CreateInvestorSteps extends BaseClass {
 	}
 
 	@Then("user click on cancel button")
-	public void user_click_on_cancel_button() {
+	public void user_click_on_cancel_button() 
+	{
 		WDP = new WiringDetailsPage(BaseClass.getDriver());
 		WDP.Scrollcontinue();
 		WDP.ClickCancel();
-		WDP.SFrame();
+		
 
 	}
 
 	@Then("user click on leavepage button")
-	public void user_click_on_leavepage_button() {
+	public void user_click_on_leavepage_button() 
+	{
+		//WDP.SFrame();
 		WDP.ClickLeavepage();
 
 	}
 
 	@Given("User back to Investors table page")
 	public void user_back_to_investors_table_page() {
+
+	}
+	@Given("user needs to logout from the application")
+	public void user_logout_() throws InterruptedException 
+	{
+		Thread.sleep(10000);
+		LGP=new LogoutPage(BaseClass.getDriver());
+		LGP.Click_Profile_dropdown();
+		Thread.sleep(5000);
+		BaseClass.getLogger().info("user is logged out succesfully");
+		LGP.Click_On_Logout();
+		Thread.sleep(5000);
 
 	}
 

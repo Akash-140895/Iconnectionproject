@@ -28,7 +28,7 @@ public class Hooks {
 		 
 	}
 	@After
-	public void Teardown() 
+	public void Teardown()
 	{
 		driver.quit();
 		ReportOpener.openReport();

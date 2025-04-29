@@ -18,9 +18,9 @@ public class WiringDetailsPage extends BasePage
 	}
 	
 	
-	@FindBy(xpath="//iframe[@id='intercom-frame']") WebElement switch_frame;
+	//@FindBy(xpath="//div[@class='v-row v-row--no-gutters align-center']") WebElement switch_frame;
 	@FindBy(xpath="//p[normalize-space()='Cancel']") WebElement click_cancel ;
-	@FindBy(xpath="//span[contains(@class,'v-btn__content')]//p[contains(text(),'Leave the page')]") WebElement click_leave ;
+	@FindBy(xpath="//span[@class='v-btn__content']//p[contains(text(),'Leave the page')]") WebElement click_leave ;
 	@FindBy(xpath="//button[contains(@class,'v-btn v-btn--elevated v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-elevated button button_lg button_primary')]") WebElement src_continue;
 	public void Scrollcontinue() 
 	{
@@ -33,10 +33,12 @@ public class WiringDetailsPage extends BasePage
 		mywait= new WebDriverWait(driver,Duration.ofSeconds(10));
 		mywait.until(ExpectedConditions.elementToBeClickable(click_cancel)).click();
 	}
-	public void SFrame() 
+	/*public void SFrame() 
 	{
-		driver.switchTo().frame(switch_frame);
-	}
+		driver.switchTo().frame(1);
+		//mywait= new WebDriverWait(driver,Duration.ofSeconds(10));
+		//mywait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(switch_frame));
+	}*/
 	public void ClickLeavepage() 
 	{
 		//click_leave.click();
