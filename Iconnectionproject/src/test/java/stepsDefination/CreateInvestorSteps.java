@@ -10,7 +10,7 @@ import pageObject.LoginPage;
 import pageObject.LogoutPage;
 import pageObject.WiringDetailsPage;
 
-public class CreateInvestorSteps extends BaseClass {
+public class CreateInvestorSteps {
 	InvestorTablePage ITP;
 	InvestorKYCForm IKF;
 	WiringDetailsPage WDP;

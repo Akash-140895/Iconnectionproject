@@ -16,6 +16,7 @@ public class LoginPage extends BasePage {
 	WebElement User_psw;
 	@FindBy(xpath = "//button[normalize-space()='Continue']")
 	WebElement Click_continue;
+	@FindBy(xpath= "//h1[normalize-space()='Verify Your Identity']") WebElement otp_screen;
 	@FindBy(xpath = "//div[@class='iconn_svg']//*[name()='svg']")
 	WebElement verify_logo;
 
@@ -28,6 +29,15 @@ public class LoginPage extends BasePage {
 	}
 	public void Enter_continue() {
 		Click_continue.click();
+	}
+	public boolean Verify_Otp() {
+		try {
+			return(otp_screen.isDisplayed());
+		}
+		catch(Exception e)
+		{
+			return(false);
+		}
 	}
 	public boolean Verify_iconnection_logo() {
 		return verify_logo.isDisplayed();
